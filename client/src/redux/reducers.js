@@ -1,3 +1,6 @@
+import{
+    GET_VIDEOS ,
+}from './actions'
 const initialState = {
 videos : []
 }
@@ -8,6 +11,7 @@ export default function rootReducer(state = initialState, { payload, type }) {
                 ...state , 
                 videos : payload
             }
-
+            default :
+            return state;
     }
 }
