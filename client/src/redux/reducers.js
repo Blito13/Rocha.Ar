@@ -1,8 +1,10 @@
 import{
     GET_VIDEOS ,
+    SEARCH,
 }from './actions'
 const initialState = {
-videos : []
+videos : [],
+search : ""
 }
 export default function rootReducer(state = initialState, { payload, type }) {
     switch(type){
@@ -10,6 +12,11 @@ export default function rootReducer(state = initialState, { payload, type }) {
             return{
                 ...state , 
                 videos : payload
+            }
+        case SEARCH :
+            return{
+                ...state , 
+                search : payload
             }
             default :
             return state;

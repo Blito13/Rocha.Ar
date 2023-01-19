@@ -1,0 +1,54 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    top: 1rem;
+    right : 1.5rem;
+    height: 2rem;
+    flex-direction: column;
+}
+.searchcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.input{
+    border-radius: 0.5rem;
+    border: 0.1rem solid rgb(190 ,190 ,190);
+    color: rgb(0,0,0);
+    padding: 0.3rem;
+    width: 12rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.buttonSearch{
+    background-color: rgb(106,203,233);
+    border : 0.1rem solid rgb(106,203,233);
+    color: rgb(255,255,255);
+    padding: 0.3rem;
+    text-align: center;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 0.5rem;
+    width: 3rem;
+    margin-left: 0.5rem;
+}
+.dropdown{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.dropdown:empty{
+    border: none;
+}
+.dropdownrow{
+    cursor: pointer;
+    text-align: start;
+    color: gray;
+    margin : 2px 0; 
+}
+.searchinner{
+    display: flex;
+}
