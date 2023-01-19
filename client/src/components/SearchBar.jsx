@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'   
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { searchBar, getProducts } from '../actions/actions'
+import { searchBar, getVideos } from '../redux/actions'
 import styles from './SearchBar.module.css';
   
 const SearchBar = () => {
@@ -10,10 +10,10 @@ const SearchBar = () => {
   const [keyword, setKeyword] = useState('')
   const data = useSelector((state) => state.videos);
   useEffect(() => {
-    dispatch(getProducts());
+    dispatch(getVideos());
   }, [data.length]);
   
-  const dataMap = data.map(e => e.name);
+/*   const dataMap = data.map(e => e.name); */
   
   // const [keyword, setKeyword] = useState('')
   // const dispatch = useDispatch();
@@ -53,7 +53,7 @@ const SearchBar = () => {
     }
     
     dispatch(searchBar(key));
-    navegacion(`/search/${key}`)
+   /*  navegacion(`/search/${key}`) */
     setKeyword('')
   }
 
@@ -67,8 +67,8 @@ const SearchBar = () => {
         <button className={styles.buttonSearch} type="submit" value="Search" onClick={(e)=>handleSubmit(e)}>Go</button>
       </div>
         <div className={styles.dropdown}>
-          {dataMap
-            .filter((item) => {
+          {Object.values(data)
+           /*  .filter((item) => {
               const searchTerm = keyword.toLowerCase();
               const fullName = item.toLowerCase();
 
@@ -79,8 +79,8 @@ const SearchBar = () => {
               );
             })
             .slice(0, 10)
-    
-            .map((item) => (
+     */
+            .forEach((item) => (
               <div
                 onClick={() => handleSearchBar(item)}
                 className={styles.dropdownrow}
